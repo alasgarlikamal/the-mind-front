@@ -19,7 +19,7 @@ const Cards = () => {
       />
       <FlippableCard
         front="Team Lead & Backend"
-        back="Cumal Alasgarli"
+        back="Kamal Alasgarli"
         className="Cumal"
         photo={qax}
         used="NestJS"
@@ -33,7 +33,7 @@ const Cards = () => {
       <FlippableCard
         front="Security &
       FrontEnd"
-        back="TedXMashtaga"
+        back="Arif Abdullayev"
         className="Arif"
       />
     </div>

@@ -14,3 +14,21 @@
     /* justify-content: space-between; */
     /* align-items: center; */
 }
+
+
+.card-front
+{
+    background-color:#010E1F;
+    border-radius: 0.5em;
+}
+
+.card-back
+{
+    background-color:#46230D ;
+    border-radius: 0.5em;
+}
+.card-back:hover
+{
+    background-color:#82431A ;
+}
+
