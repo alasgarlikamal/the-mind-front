@@ -52,7 +52,7 @@ export default function Auth() {
     else 
     {
       return (
-        <Flex   className="main-wrapper"  >
+        <Flex   className={isOpen ? "main-wrapper blurred-background" : "main-wrapper"}  >
          <Flex className={clicked ? "left  left-on-click" : "left"} color={"black"} bg={"white"} w={"70%"} textAlign={"center"} justifyContent={"center"} alignItems={"center"}  >
           <Box w={"50%"} gap={2} >
           <Heading color={"#010E1F"} >Create Account</Heading>
@@ -78,14 +78,14 @@ export default function Auth() {
         <AlertDialogContent>
           <AlertDialogHeader textAlign={"center"} >Just one more step...</AlertDialogHeader>
           <AlertDialogBody textAlign={"center"} >
-          We've sent a verification email to <a href="#" color="blue" >murad.isayev@ufaz.az.</a><br />
+          We've sent a verification email to <a href="#" className="mail-link" >murad.isayev@ufaz.az.</a><br />
           Please verify your email address to log into TheMind<br />
           <CiMail className="CiMail" />
           </AlertDialogBody>
 
-          <AlertDialogFooter className="footer-for-link" >
-          <div><a href='#'>Didn't get the mail? Send it again.</a></div>
-          </AlertDialogFooter>
+          <footer className="footer-for-link" >
+          <a href='#'>Didn't get the mail? Click here to send it again.</a>
+          </footer>
         </AlertDialogContent>
       </AlertDialog>
           </FormControl>

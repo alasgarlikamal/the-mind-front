@@ -8,7 +8,15 @@
     box-shadow: 0.2em 0.6em 2em;
     
 }
-
+.blurred-background
+{
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+.mail-link
+{
+    color: #010E1F;
+}
 .CiMail
 {
     display: inline-block;
@@ -19,8 +27,9 @@
 
 .footer-for-link
 {
-    border: 1px solid black;
-    justify-content: center;
+    text-align: center;
+    height: 3em;
+    color: #010E1F;
 }
 
 .rightForBg
