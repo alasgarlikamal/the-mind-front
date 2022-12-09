@@ -1,7 +1,7 @@
 import React from "react";
 import FlippableCard from "./FlippableCard";
 import "./Cards.css";
-import qax from "./card/imgs/qax.png";
+import qax from "./CardComponents/imgs/qax.png";
 
 const Cards = () => {
   return (

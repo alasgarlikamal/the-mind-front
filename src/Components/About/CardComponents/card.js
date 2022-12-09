@@ -1,5 +1,5 @@
-import "./card.css";
-import "./flip-transition.css";
+import "./Card.css";
+import "./Flip-transition.css";
 
 function Card({ onClick, back, front, photo, used }) {
   return (
