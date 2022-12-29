@@ -1,10 +1,9 @@
-import { Box, Input, useDisclosure, Center, Image, Flex, Badge, Text, Button, Spacer,Select,Heading,FormControl,AlertDialog,
+import { Box, Input, useDisclosure, Flex, Text, Button,Select,Heading,FormControl,AlertDialog,
   AlertDialogBody,
-  AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogContent,
   AlertDialogOverlay,
-AlertDialogCloseButton} from "@chakra-ui/react";
+} from "@chakra-ui/react";
 import React from 'react'
 import { useState,useRef } from "react";
 import "./AuthStyles.css";
