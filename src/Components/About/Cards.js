@@ -19,6 +19,7 @@ const Cards = () => {
       {about && about.map((item) => {
         return (
           <FlippableCard
+            key={item.id}
             front={item.role}
             back={item.fullName}
             photo={item?.photo}
