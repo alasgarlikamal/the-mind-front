@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import {useState} from "react"
 import "./ProfileUpdate.css"
-import { Box,SimpleGrid,Avatar, FormLabel,Input, Flex, Text, Button, Heading,FormControl, Modal, useDisclosure, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalFooter, ModalCloseButton} from "@chakra-ui/react";
+import { InputGroup, InputRightElement, Box,SimpleGrid,Avatar, FormLabel,Input, Flex, Text, Button, Heading,FormControl, Modal, useDisclosure, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalFooter, ModalCloseButton} from "@chakra-ui/react";
 import { getUserInfo } from '../../api/getUserInfo';
 import { updateUserInfo } from '../../api/updateUserInfo';
 
@@ -64,7 +64,7 @@ export default function ProfileUpdate() {
 
     return (
     
-   <Flex className='main-profile-wrapper' >
+   <Flex className='main-profile-wrapper'  >
     <Box  className="box-header" h={"30%"} >
         <Box>
         <Heading>Hello {originalUser.firstname}!</Heading>
@@ -85,23 +85,13 @@ export default function ProfileUpdate() {
         <SimpleGrid columns={2}>
 
         <Box className="Binput">
-        <FormLabel fontWeight={"bolder"} htmlFor="Name">Name</FormLabel>
+        <FormLabel fontWeight={"bolder"} htmlFor="Name">Firstname</FormLabel>
         <Input placeholder='Name' id="Name" bg={"white"} value={user.firstname} onChange={(e) => setUser({...user, firstname: e.target.value})} />
         </Box>
         
         <Box className="Binput">
-        <FormLabel fontWeight={"bolder"} htmlFor="Surname" >Surname</FormLabel>
+        <FormLabel fontWeight={"bolder"} htmlFor="Surname" >Lastname</FormLabel>
         <Input placeholder='Surname' bg={"white"} id="Surname" value={user.lastname} onChange={(e) => setUser({...user, lastname: e.target.value})} />
-        </Box>
-        
-        <Box className="Binput">
-        <FormLabel fontWeight={"bolder"} htmlFor="Date" >Date</FormLabel>
-        <Input  type="date" bg={"white"} placeholder='Date' id="Date" value={user.date_of_birth} onChange={(e) => setUser({...user, date_of_birth: e.target.value})}/>
-        </Box>
-
-        <Box className="Binput">
-        <FormLabel fontWeight={"bolder"} htmlFor="username" >Username</FormLabel>
-        <Input placeholder='Surname' bg={"white"} id="username" value={user.username} isReadOnly={true} />
         </Box>
 
         <Box className="Binput">
@@ -109,13 +99,51 @@ export default function ProfileUpdate() {
         <Input placeholder='Surname' bg={"white"} id="email" value={user.email} isReadOnly={true} />
         </Box>
 
-        <Box className='box-footer' h={"20%"} mb="3em" >
-            <Button  bg={"white"} variant='outline' width={"8em"} mr="1em" color="#09264A" onClick={onOpen}>Cancel</Button>
-            <Button type="Submit" className="saveB" bg={"#09264A"} color={"white"}  width={"8em"} onClick={onSave}>Save</Button>
+        <Box className="Binput">
+        <FormLabel fontWeight={"bolder"} htmlFor="username" >Username</FormLabel>
+        <InputGroup>
+        <Input placeholder='Surname' bg={"white"} id="username" value={user.username} isReadOnly={true} />
+        <InputRightElement width='4.5rem'>
+              <Button h='1.75rem' size='xs' colorScheme={'gray'} >
+                 Change
+              </Button>
+        </InputRightElement>
+        </InputGroup>
+        
+        </Box>
+
+        <Box className="Binput">
+        <FormLabel fontWeight={"bolder"} htmlFor="Date" >Date</FormLabel>
+        <Input  type="date" bg={"white"} placeholder='Date' id="Date" value={user.date_of_birth} onChange={(e) => setUser({...user, date_of_birth: e.target.value})}/>
+        </Box>
+
+        
+
+        <Box className="Binput">
+        <FormLabel fontWeight={"bolder"} htmlFor="email" >Password</FormLabel>
+            <InputGroup >
+              <Input 
+                bg={"white"}
+                pr='4.5rem'
+                type={'password'}
+                value='asdasldblasdblasd'
+                isReadOnly={true}
+              />
+            <InputRightElement width='4.5rem'>
+              <Button h='1.75rem' size='xs' colorScheme={'red'} >
+                 Reset
+              </Button>
+            </InputRightElement>
+          </InputGroup>
         </Box>
 
         </SimpleGrid>
       </FormControl>
+
+      <Box className='box-footer' h={"20%"} mb="3em" >
+            <Button  bg={"white"} variant='outline' width={"8em"} mr="1em" color="#09264A" onClick={onOpen}>Cancel</Button>
+            <Button type="Submit" className="saveB" bg={"#09264A"} color={"white"}  width={"8em"} onClick={onSave}>Save</Button>
+        </Box>
         
      
     </Box>
