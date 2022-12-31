@@ -73,11 +73,7 @@ export default function Auth() {
       return;
     }
 
-
-
-    console.log(userSignUp)
     onOpen();
-
   }
 
 
