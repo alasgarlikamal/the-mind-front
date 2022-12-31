@@ -100,3 +100,21 @@
 {
     margin: 0.5em;
 }
+.inputItem
+{
+    font-size: 1.3em !important;
+    height: 2.2em !important;
+    background-color:#F4F8F7 !important; 
+    border-radius: 10px !important; 
+    border: none !important;
+    margin-bottom: 1.2em !important;
+}
+
+.name, .surname
+{
+    width: 48% !important;
+}
+.name
+{
+    margin-right: 0.5em !important;
+}

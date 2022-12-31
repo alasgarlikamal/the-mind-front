@@ -74,13 +74,13 @@ export default function Auth() {
           <form method="POST" action='/Users/nicat/Desktop/themindfront/The_Mind_Front_End/public'>
           <FormControl lineHeight={"3em"} paddingTop={"0.5em"} className="create-account">
             <Box>
-                <Input fontSize={"1.3em"} h={"2.2em"}  mb={"1.2em"} mr={"0.5em"} w={"48%"} bg={"#F4F8F7"} borderRadius={10} border={"none"} type="text" placeholder="name" />
-                <Input fontSize={"1.3em"} h={"2.2em"}  w={"48%"} bg={"#F4F8F7"} borderRadius={10} border={"none"} type="text" placeholder="surname"  />
-                <Input fontSize={"1.3em"} h={"2.2em"} mb={"1.2em"} bg={"#F4F8F7"} borderRadius={10} border={"none"} type="date" required />
-                <Input fontSize={"1.3em"} h={"2.2em"} mb={"1.2em"} bg={"#F4F8F7"} borderRadius={10} border={"none"} type="email" placeholder="email" />
-            <Input fontSize={"1.3em"} h={"2.2em"} mb={"1.2em"} bg={"#F4F8F7"} borderRadius={10} border={"none"} type='password' placeholder="password"  />
-            <Input fontSize={"1.3em"} h={"2.2em"} mb={"1.2em"} bg={"#F4F8F7"} borderRadius={10} border={"none"} type='password' placeholder=" confirm password" />
-            <Select fontSize={"1.3em"} h={"2.2em"} mb={"1.2em"} placeholder='Select gender' bg={"#F4F8F7"} borderRadius={10} border={"none"}  >
+                <Input className={"name inputItem"}  type="text" placeholder="name" />
+                <Input className={"surname inputItem"}    type="text" placeholder="surname"  />
+                <Input className={"date inputItem"}  type="date" required />
+                <Input className={"email inputItem"}  type="email" placeholder="email" />
+            <Input className={"pass inputItem"}     type='password' placeholder="password"  />
+            <Input className={"confpass inputItem"}    type='password' placeholder=" confirm password" />
+            <Select className={"gender inputItem"}   placeholder='Select gender' >
                 <option value='male'>Male</option>
                 <option value='female'>Female</option>
             </Select>
