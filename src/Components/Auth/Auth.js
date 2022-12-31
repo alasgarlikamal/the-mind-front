@@ -70,15 +70,14 @@ export default function Auth() {
          <Flex className={clicked ? "left  left-on-click" : "left"} color={"black"} bg={"white"} w={"70%"} textAlign={"center"} justifyContent={"center"} alignItems={"center"}  >
           <Box w={"50%"} gap={2} >
           <Heading color={"#010E1F"} ml={"2em"} >Create Account</Heading>
-          <form method="POST" action='/Users/nicat/Desktop/themindfront/The_Mind_Front_End/public'>
-          <FormControl lineHeight={"3em"} paddingTop={"0.5em"} className="create-account">
+          <FormControl lineHeight={"3em"} paddingTop={"0.5em"} className="create-account" isRequired>
             <Box>
-                <Input fontSize={"1.3em"} h={"2.2em"}  mb={"1.2em"} mr={"0.5em"} w={"48%"} bg={"#F4F8F7"} borderRadius={10} border={"none"} type="text" placeholder="name" />
-                <Input fontSize={"1.3em"} h={"2.2em"}  w={"48%"} bg={"#F4F8F7"} borderRadius={10} border={"none"} type="text" placeholder="surname"  />
+                <Input fontSize={"1.3em"} h={"2.2em"}  mb={"1.2em"} mr={"0.5em"} w={"48%"} bg={"#F4F8F7"} borderRadius={10} border={"none"} type="text" placeholder="Name" />
+                <Input fontSize={"1.3em"} h={"2.2em"}  w={"48%"} bg={"#F4F8F7"} borderRadius={10} border={"none"} type="text" placeholder="Surname"  />
                 <Input fontSize={"1.3em"} h={"2.2em"} mb={"1.2em"} bg={"#F4F8F7"} borderRadius={10} border={"none"} type="date" required />
-                <Input fontSize={"1.3em"} h={"2.2em"} mb={"1.2em"} bg={"#F4F8F7"} borderRadius={10} border={"none"} type="email" placeholder="email" />
-            <Input fontSize={"1.3em"} h={"2.2em"} mb={"1.2em"} bg={"#F4F8F7"} borderRadius={10} border={"none"} type='password' placeholder="password"  />
-            <Input fontSize={"1.3em"} h={"2.2em"} mb={"1.2em"} bg={"#F4F8F7"} borderRadius={10} border={"none"} type='password' placeholder=" confirm password" />
+                <Input fontSize={"1.3em"} h={"2.2em"} mb={"1.2em"} bg={"#F4F8F7"} borderRadius={10} border={"none"} type="email" placeholder="E-mail" />
+            <Input fontSize={"1.3em"} h={"2.2em"} mb={"1.2em"} bg={"#F4F8F7"} borderRadius={10} border={"none"} type='password' placeholder="Password"  />
+            <Input fontSize={"1.3em"} h={"2.2em"} mb={"1.2em"} bg={"#F4F8F7"} borderRadius={10} border={"none"} type='password' placeholder=" Confirm password" />
             <Select fontSize={"1.3em"} h={"2.2em"} mb={"1.2em"} placeholder='Select gender' bg={"#F4F8F7"} borderRadius={10} border={"none"}  >
                 <option value='male'>Male</option>
                 <option value='female'>Female</option>
@@ -102,7 +101,6 @@ export default function Auth() {
         </AlertDialogContent>
       </AlertDialog>
           </FormControl>
-          </form>
           
           </Box>
           
