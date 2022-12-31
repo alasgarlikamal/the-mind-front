@@ -3,6 +3,7 @@ import { Box, Input, useDisclosure, Flex, Text, Button,Select,Heading,FormContro
   AlertDialogHeader,
   AlertDialogContent,
   AlertDialogOverlay,
+  AlertDialogCloseButton,
 } from "@chakra-ui/react";
 import React from 'react'
 import { useState,useRef } from "react";
@@ -14,7 +15,7 @@ import { useNavigate } from "react-router";
 export default function Auth() {
   //shout out to my nigga Turan
   const [clicked, setClicked] = useState(false)
-  const { isOpen, onOpen } = useDisclosure()
+  const { isOpen, onOpen, onClose } = useDisclosure()
   const cancelRef = useRef();
   const navigate = useNavigate();
 
@@ -85,11 +86,12 @@ export default function Auth() {
             </Select>
             </Box>
             <Button type="submit" onClick={onOpen} transitionDuration={"0.7s"} _hover={{bg:"white", color:"#010E1F" }} border={"1px solid #010E1F"} w={"45%"} p={5} borderRadius={10} bg={"#010E1F"} color={"white"} >Sign Up</Button>
-            <AlertDialog motionPreset='slideInBottom' leastDestructiveRef={cancelRef}  isOpen={isOpen} isCentered>
+            <AlertDialog motionPreset='slideInBottom' leastDestructiveRef={cancelRef}  isOpen={isOpen} onClose={onClose} isCentered>
         <AlertDialogOverlay />
-
+        
         <AlertDialogContent>
           <AlertDialogHeader textAlign={"center"} >Just one more step...</AlertDialogHeader>
+          <AlertDialogCloseButton />
           <AlertDialogBody textAlign={"center"} >
           We've sent a verification email to <a href="src/Components/Auth/auth#Auth.js" className="mail-link" >murad.isayev@ufaz.az.</a><br />
           Please verify your email address to log into TheMind<br />
