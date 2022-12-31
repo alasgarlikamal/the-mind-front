@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default async function register(data) {
+export async function register(data) {
     const url = `${process.env.REACT_APP_API_URL}/auth/register`;
     
     try {
