@@ -71,8 +71,7 @@ export default function Auth() {
          <Flex className={clicked ? "left  left-on-click" : "left"} color={"black"} bg={"white"} w={"70%"} textAlign={"center"} justifyContent={"center"} alignItems={"center"}  >
           <Box w={"50%"} gap={2} >
           <Heading color={"#010E1F"} ml={"2em"} >Create Account</Heading>
-          <form method="POST" action='/Users/nicat/Desktop/themindfront/The_Mind_Front_End/public'>
-          <FormControl lineHeight={"3em"} paddingTop={"0.5em"} className="create-account">
+          <FormControl lineHeight={"3em"} paddingTop={"0.5em"} className="create-account" isRequired>
             <Box>
                 <Input className={"name inputItem"}  type="text" placeholder="name" />
                 <Input className={"surname inputItem"}    type="text" placeholder="surname"  />
@@ -104,7 +103,6 @@ export default function Auth() {
         </AlertDialogContent>
       </AlertDialog>
           </FormControl>
-          </form>
           
           </Box>
           
