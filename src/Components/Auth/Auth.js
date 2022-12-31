@@ -7,7 +7,6 @@ import { Box, Input, useDisclosure, Flex, Text, Button,Select,Heading,FormContro
 import React from 'react'
 import { useState,useRef } from "react";
 import "./AuthStyles.css";
-import { BsGoogle } from "react-icons/bs";
 import { CiMail } from "react-icons/ci";
 import signIn from "../../api/login";
 import { useNavigate } from "react-router";
@@ -15,7 +14,7 @@ import { useNavigate } from "react-router";
 export default function Auth() {
   //shout out to my nigga Turan
   const [clicked, setClicked] = useState(false)
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen, onOpen } = useDisclosure()
   const cancelRef = useRef();
   const navigate = useNavigate();
 
@@ -40,14 +39,13 @@ export default function Auth() {
   <Flex className="main-wrapper"  >
     <Flex className={clicked ? "left  left-on-click" : "left"}>
           <Box  w={"80%"} >
-      <Heading>Sign in to The mind</Heading>
-      <a className="icon" href="src/Components/Auth/auth#Auth.js"><BsGoogle /></a>
+      <Heading fontSize={"5xl"}>Sign in to The Mind</Heading>
       <form>
-      <FormControl lineHeight={"3em"}  >
+      <FormControl lineHeight={"3.5em"}  >
         {errorMessage && <Text color="red">{errorMessage}</Text>}
-        <Input onChange={(e) => setsignInEmail(e.target.value)} bg={"#F4F8F7"} borderRadius={10} border={"none"} type='email' placeholder="email" required w={"55%"} />
-        <Input onChange={(e) => setSignInPassword(e.target.value)} bg={"#F4F8F7"} borderRadius={10} border={"none"} type='password' placeholder="password" required w={"55%"} />
-        <Text><a href="src/Components/Auth/auth#Auth.js">Forgot your password?</a></Text>
+        <Input mb={"1em"} mt={"1em"} fontSize={"1.3em"} height={"2.5em"}  onChange={(e) => setsignInEmail(e.target.value)} bg={"#F4F8F7"} borderRadius={10} border={"none"} type='email' placeholder="email" required w={"55%"} />
+        <Input  fontSize={"1.3em"} height={"2.5em"} onChange={(e) => setSignInPassword(e.target.value)} bg={"#F4F8F7"} borderRadius={10} border={"none"} type='password' placeholder="password" required w={"55%"} />
+        <Text p={0} color={"gray"}><a href="src/Components/Auth/auth#Auth.js">Forgot your password?</a></Text>
         <Button onClick={(e) => signInClick(e)} type="submit"  transitionDuration={"0.7s"} _hover={{bg:"white", color:"#010E1F" }} border={"1px solid #010E1F"} w={"45%"} p={5} borderRadius={10} bg={"#010E1F"} color={"white"} >Sign In</Button>
       </FormControl>
       </form>
@@ -68,25 +66,24 @@ export default function Auth() {
     else 
     {
       return (
-        <Flex   className={isOpen ? "main-wrapper blurred-background" : "main-wrapper"}  >
+        <Flex className={isOpen ? "main-wrapper blurred-background" : "main-wrapper"}  >
          <Flex className={clicked ? "left  left-on-click" : "left"} color={"black"} bg={"white"} w={"70%"} textAlign={"center"} justifyContent={"center"} alignItems={"center"}  >
           <Box w={"50%"} gap={2} >
-          <Heading color={"#010E1F"} >Create Account</Heading>
+          <Heading color={"#010E1F"} ml={"2em"} >Create Account</Heading>
           <form method="POST" action='/Users/nicat/Desktop/themindfront/The_Mind_Front_End/public'>
-          <FormControl lineHeight={"3em"} paddingTop={"2em"} className="create-account">
+          <FormControl lineHeight={"3em"} paddingTop={"0.5em"} className="create-account">
             <Box>
-                <Input w={"50%"} bg={"#F4F8F7"} borderRadius={20} border={"none"} type="text" placeholder="name" />
-                <Input w={"50%"} bg={"#F4F8F7"} borderRadius={20} border={"none"} type="text" placeholder="surname"  />
-                <Input  bg={"#F4F8F7"} borderRadius={20} border={"none"} type="date" required />
-                <Input  bg={"#F4F8F7"} borderRadius={20} border={"none"} type="email" placeholder="email" />
-            <Input bg={"#F4F8F7"} borderRadius={20} border={"none"} type='password' placeholder="password"  />
-            <Input bg={"#F4F8F7"} borderRadius={20} border={"none"} type='password' placeholder=" confirm password" />
-            <Select placeholder='Select gender' bg={"#F4F8F7"} borderRadius={20} border={"none"}  >
+                <Input fontSize={"1.3em"} h={"2.2em"}  mb={"1.2em"} mr={"0.5em"} w={"48%"} bg={"#F4F8F7"} borderRadius={10} border={"none"} type="text" placeholder="name" />
+                <Input fontSize={"1.3em"} h={"2.2em"}  w={"48%"} bg={"#F4F8F7"} borderRadius={10} border={"none"} type="text" placeholder="surname"  />
+                <Input fontSize={"1.3em"} h={"2.2em"} mb={"1.2em"} bg={"#F4F8F7"} borderRadius={10} border={"none"} type="date" required />
+                <Input fontSize={"1.3em"} h={"2.2em"} mb={"1.2em"} bg={"#F4F8F7"} borderRadius={10} border={"none"} type="email" placeholder="email" />
+            <Input fontSize={"1.3em"} h={"2.2em"} mb={"1.2em"} bg={"#F4F8F7"} borderRadius={10} border={"none"} type='password' placeholder="password"  />
+            <Input fontSize={"1.3em"} h={"2.2em"} mb={"1.2em"} bg={"#F4F8F7"} borderRadius={10} border={"none"} type='password' placeholder=" confirm password" />
+            <Select fontSize={"1.3em"} h={"2.2em"} mb={"1.2em"} placeholder='Select gender' bg={"#F4F8F7"} borderRadius={10} border={"none"}  >
                 <option value='male'>Male</option>
                 <option value='female'>Female</option>
             </Select>
             </Box>
-            <a href="src/Components/Auth/auth#Auth.js" className="icon-register" ><BsGoogle /></a>
             <Button type="submit" onClick={onOpen} transitionDuration={"0.7s"} _hover={{bg:"white", color:"#010E1F" }} border={"1px solid #010E1F"} w={"45%"} p={5} borderRadius={10} bg={"#010E1F"} color={"white"} >Sign Up</Button>
             <AlertDialog motionPreset='slideInBottom' leastDestructiveRef={cancelRef}  isOpen={isOpen} isCentered>
         <AlertDialogOverlay />
