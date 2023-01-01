@@ -41,7 +41,7 @@ const CreateJoin = () => {
 
 
       </CardFlip>
-      <Text style={{ position: 'absolute', bottom: 0 }} fontSize={'xs'} marginTop={'1vw'} textAlign={'center'} color={'white'}>All rights reserved © 2022 The Mind</Text>
+      <Text style={{ position: 'absolute', bottom: 0 }} fontSize={'xs'} marginTop={'1vw'} textAlign={'center'} color={'#9B9B9B'}>All rights reserved © 2022 The Mind</Text>
     </div>
   );
 };
