@@ -41,7 +41,7 @@ const CreateJoin = () => {
 
 
       </CardFlip>
-      <footer>All rights reserved © 2022 The Mind</footer>
+      <Text fontSize={'xs'} marginTop={'1vw'} textAlign={'center'} color={'white'}>All rights reserved © 2022 The Mind</Text>
     </div>
   );
 };
