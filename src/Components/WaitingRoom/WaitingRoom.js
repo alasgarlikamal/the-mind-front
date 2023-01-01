@@ -1,13 +1,38 @@
 import React from "react";
 import "./WaitingRoomStyles.css";
-import { Heading,Stack,StackDivider,Card, CardHeader, CardBody, CardFooter,Button,Avatar,Text,Input,Flex,Box,IconButton } from "@chakra-ui/react";
+import { CopyIcon } from "@chakra-ui/icons";
+import { Alert } from "@chakra-ui/react";
+import { Heading,Stack,StackDivider,Card, CardHeader, CardBody, CardFooter,Button,Avatar,Text,Input,Flex,Box,IconButton} from "@chakra-ui/react";
 import { AiOutlineCloseCircle } from "react-icons/ai";
-const CreateJoin = () => {
-  const [isFlipped, setIsFlipped] = React.useState(false);
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import { set } from "lodash";
 
-  const handleFlip = () => {
-    setIsFlipped(!isFlipped);
+
+const CreateJoin = () => {
+  const [isHovered, setIsHovered] = React.useState(false);
+  const [text, setText] = React.useState("Copy Link");
+  const [isActive, setIsActive] = React.useState(false);
+
+  const handleClick = () => {
+    setIsHovered(false); //hovernan oyna duzelt
+    setIsActive(!isActive);
+    setText("Copied!");
+    setTimeout(() => setText('Copy Link'), 1000);
   };
+
+
+  const handleMouseEnter = () => {
+    setTimeout(() => {
+      setIsHovered(true);
+    }, 20);
+  };
+
+  const handleMouseLeave = () => {
+    setTimeout(() => {
+      setIsHovered(false);
+  }, 20);
+  };
+
 
   return (
   <Flex className="PlayerList-container">
@@ -84,7 +109,9 @@ const CreateJoin = () => {
 
       </Flex>
       <Flex mt={"3em"} width={"100%"} justifyContent={"space-between"} >
-            <Button w={"45%"} h={"3.2em"} >Copy Link</Button>
+        <CopyToClipboard text="nenonushdukamal">
+            <Button  className={isActive ? 'active-copy-button' : 'copy-button'} position="sticky"  onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={handleClick} w={"45%"} h={"3.2em"} > {isHovered ? <CopyIcon transition="all ease-out 0.3s"/> : text }</Button>
+            </CopyToClipboard>
             <Button w={"45%"} h={"3.2em"} >Start</Button>
       </Flex >
     </div>
