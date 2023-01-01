@@ -40,7 +40,7 @@ export default function Auth() {
       return;
     } 
     localStorage.setItem('access_token', resultToken)
-    navigate('/me/profile')
+    navigate('/settings')
   }
 
   const handlePasswordChange = (e) => {
