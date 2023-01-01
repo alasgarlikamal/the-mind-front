@@ -32,10 +32,8 @@
 .copy-button:hover {
     transition: all 20ms ease-in-out;
     color: rgba(0, 0, 0, 0.5);
-    /* opacity: 0.5; */
 }
 
-.active-copy-button:hover {
-    cursor: pointer;
-    background-color: initial;
-  }
+.copy-button-active {
+    cursor: default;
+}
