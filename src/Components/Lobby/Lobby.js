@@ -1,7 +1,7 @@
 import React from "react";
 import "./LobbyStyles.css";
 import CardFlip from "react-card-flip";
-import { Button,Avatar,Text,Input,Flex,Box,IconButton } from "@chakra-ui/react";
+import { Button,Avatar,Text,Input,Flex } from "@chakra-ui/react";
 import { IoIosArrowBack } from "react-icons/io";
 
 const CreateJoin = () => {
