@@ -13,6 +13,7 @@ import signIn from "../../api/login";
 import { useNavigate } from "react-router";
 
 export default function Auth() {
+  //Shout out to my yeti Ayxan
   //shout out to my nigga Turan
   const [clicked, setClicked] = useState(false)
   const { isOpen, onOpen, onClose } = useDisclosure()
