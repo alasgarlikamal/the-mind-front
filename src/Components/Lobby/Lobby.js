@@ -1,7 +1,7 @@
 import React from "react";
 import "./LobbyStyles.css";
 import CardFlip from "react-card-flip";
-import { Button,Avatar,Text,Input,Flex,Box,IconButton } from "@chakra-ui/react";
+import { Button,Avatar,Text,Input,Flex} from "@chakra-ui/react";
 import { IoIosArrowBack } from "react-icons/io";
 
 const CreateJoin = () => {
@@ -19,10 +19,10 @@ const CreateJoin = () => {
           <div className="front-text"  >
             <Text color="white" mb={"2em"}>nickname</Text>
             </div>
-          <Button bg={"#1F5378"}  w={"55%"} className="joinroombutton" onClick={handleFlip}>
+          <Button fontWeight={"500"} bg={"#1F5378"}  w={"55%"} className="joinroombutton" onClick={handleFlip}>
             Join Room
           </Button>
-          <Button bg={"#46A661"} color={"white"}  w={"55%"} className="createroombutton">Create Room</Button>
+          <Button fontWeight={"500"} bg={"#46A661"} color={"white"}  w={"55%"} className="createroombutton">Create Room</Button>
         </div>
 
 
