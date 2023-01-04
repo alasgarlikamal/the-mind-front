@@ -12,10 +12,11 @@ const CreateJoin = () => {
   const [isActive, setIsActive] = React.useState(false);
 
   const handleClick = () => {
-    setIsHovered(false); //hovernan oyna duzelt
     setIsActive(!isActive);
     setText("Copied!");
     setTimeout(() => setText('Copy Link'), 1000);
+    setTimeout(() => setIsActive(false), 1000);
+    setIsHovered(!isHovered);
   };
 
 
@@ -29,6 +30,7 @@ const CreateJoin = () => {
     setTimeout(() => {
       setIsHovered(false);
   }, 20);
+
   };
 
 
@@ -108,7 +110,7 @@ const CreateJoin = () => {
       </Flex>
       <Flex mt={"3em"} width={"100%"} justifyContent={"space-between"} >
         <CopyToClipboard text="nenonushdukamal">
-            <Button  className={isActive ? 'active-copy-button' : 'copy-button'} position="sticky"  onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={handleClick} w={"45%"} h={"3.2em"} > {isHovered ? <CopyIcon transition="all ease-out 0.3s"/> : text }</Button>
+            <Button  className={isActive ? 'active-copy-button' : 'copy-button'} position="sticky" isDisabled={isActive}  onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={handleClick} w={"45%"} h={"3.2em"} > {isHovered && isActive === false ? <CopyIcon transition="all ease-out 0.3s"/> : text }</Button>
             </CopyToClipboard>
             <Button w={"45%"} h={"3.2em"} >Start</Button>
       </Flex >

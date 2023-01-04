@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import {useState} from "react"
-import "./ProfileUpdate.css"
+import "./ProfileUpdateStyles.css"
 import { InputGroup, InputRightElement, Box,SimpleGrid,Avatar, FormLabel,Input, Flex, Text, Button, Heading,FormControl, Modal, useDisclosure, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalFooter, ModalCloseButton} from "@chakra-ui/react";
 import { getUserInfo } from '../../api/getUserInfo';
 import { updateUserInfo } from '../../api/updateUserInfo';
