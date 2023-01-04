@@ -1,11 +1,9 @@
 import React from "react";
 import "./WaitingRoomStyles.css";
 import { CopyIcon } from "@chakra-ui/icons";
-import { Alert } from "@chakra-ui/react";
-import { Heading,Stack,StackDivider,Card, CardHeader, CardBody, CardFooter,Button,Avatar,Text,Input,Flex,Box,IconButton} from "@chakra-ui/react";
+import { Heading,Button,Avatar,Text,Flex} from "@chakra-ui/react";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import { set } from "lodash";
 
 
 const CreateJoin = () => {
