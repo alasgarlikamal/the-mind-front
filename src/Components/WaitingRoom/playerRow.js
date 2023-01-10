@@ -9,7 +9,7 @@ export default function PlayerRow(props) {
         <Flex  p={"0.3em"} bg={"white"}  color={"black"} borderRadius={"3px"} mb={"1em"} >
             
             <Flex alignItems={"center"} justifyContent={"center"}  width={"20%"}>
-              <Avatar border={"3px solid green"} w={"2em"} h={"2em"} src="https://bit.ly/dan-abramov" />
+              <Avatar border={"3px solid green"} w={"2.3em"} h={"2.3em"} src="https://bit.ly/dan-abramov" />
             </Flex>
 
             <Flex alignItems={"center"} width={"60%"}>
