@@ -15,43 +15,23 @@ const CreateJoin = () => {
       </Flex>
 
       <VStack
-        spacing={4}
         align='stretch'
-        h='160px'
+        h='40vh'
+        marginTop={'2em'}
       >
-      <Box>
-        auye
-      </Box>  
+        <PlayerRow/>
+        <PlayerRow/>
+        <PlayerRow/>
+        <PlayerRow/>
+
       </VStack>
-
-      
-      <Flex  color={"white"} mt={"4em"} flexDirection={"column"} >
-          
-          <Flex  p={"0.3em"} bg={"white"}  color={"black"} borderRadius={"3px"} mb={"1em"} >
-
-            <Flex alignItems={"center"} justifyContent={"center"}  width={"20%"}>
-              <Avatar  w={"2.3em"} h={"2.3em"} src="https://bit.ly/dan-abramov" />
-            </Flex>
-
-            <Flex alignItems={"center"} width={"60%"}>
-              <Text fontWeight={"bold"} m={"none"}  > nickname </Text>
-            </Flex>
-
-          </Flex >
-
-          <PlayerRow/>
-      
-          <PlayerRow/>
-        
-          <PlayerRow/>
-
-
-      </Flex>
-      <Flex mt={"3em"} width={"100%"} justifyContent={"space-between"} >
+           
+      <Flex width={"100%"} justifyContent={"space-between"} >
             <Button w={"45%"} h={"3.2em"} onClick={onCopy}>{hasCopied ? "Copied!" : "Copy"}</Button>
             <Button w={"45%"} h={"3.2em"} colorScheme='green' >Start</Button>
       </Flex >
     </div>
+    <Text style={{ position: 'absolute', bottom: 0 }} fontSize={'xs'} marginBottom={'1vw'} textAlign={'center'} color={'#9B9B9B'}>All rights reserved © 2022 The Mind</Text>
   </Flex>
   )
 };
