@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import "./LobbyStyles.css";
 import CardFlip from "react-card-flip";
 import { Button,Avatar,Text,Input,Flex} from "@chakra-ui/react";
@@ -9,9 +9,11 @@ const CreateJoin = () => {
   const [isFlipped, setIsFlipped] = React.useState(false);
   const [user, setUser] = useState({firstname: '', lastname: '', date_of_birth: '', username: '', email: '', avatar: {imageUrl: ''}});
   const [errorMessage, setErrorMessage] = useState(null);
+  const inputReference = useRef(null);
 
   const handleFlip = () => {
     setIsFlipped(!isFlipped);
+    inputReference.current.focus();
   };
 
   useEffect(() => {
@@ -53,7 +55,7 @@ const CreateJoin = () => {
           <Text color="white" mb={"1em"}>Enter Invitation link:</Text>
           </div>
           <div className="url-input">
-            <Input mb={"4em"} bg={"#BFBFBF"} id={"url"}  color={"white"} textAlign={"center"}  type="text" placeholder="Room url..." />
+            <Input mb={"4em"} bg={"#BFBFBF"} id={"url"} ref={inputReference} autoComplete={'off'} color={"white"}  type="text" placeholder="Paste link" />
           </div>
           <Button bg={"#46A661"} className={"joinroombutton"} w={"55%"} color={"white"} >Join</Button>
         </div>
