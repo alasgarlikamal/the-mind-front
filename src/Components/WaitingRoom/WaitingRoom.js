@@ -1,7 +1,6 @@
 import React from "react";
 import "./WaitingRoomStyles.css";
-import { Heading,Button,Avatar,Text,Flex,useClipboard, IconButton, VStack, Box} from "@chakra-ui/react";
-import { CloseIcon } from "@chakra-ui/icons";
+import { Heading,Button,Avatar,Text,Flex,useClipboard, VStack, Box} from "@chakra-ui/react";
 import PlayerRow from "./playerRow";
 
 const CreateJoin = () => {
