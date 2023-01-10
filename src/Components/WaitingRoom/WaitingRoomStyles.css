@@ -19,8 +19,6 @@
     box-shadow: 0.2em 0.6em 5em ;
     width: 25em;
     height: 35em;
-    display: flex;
-    flex-direction: column;
     padding: 3em;
 }
 
