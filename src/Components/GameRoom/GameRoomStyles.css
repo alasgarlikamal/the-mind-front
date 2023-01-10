@@ -1,0 +1,38 @@
+.gameroom-background::before {
+    content: "";
+    position:   absolute;
+    background-image:  url(../../../public/images/gameroom_background.png);
+    /* background: rgba(11, 21, 34, 0.55);  */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 105vh;
+    width: 105vw;
+    z-index: -1;
+ 
+    /* blur background */
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+
+}
+
+.gameroom-content {
+    position: relative;
+}
+
+
+.level-indicator {
+    top: 2.188rem;
+    left: 2.625rem;
+    position: absolute;
+    width: 11.188rem;
+    height: 3.458rem;
+    background: linear-gradient(90deg, #0D366A 0%, #01162F 100%);
+    box-shadow: 6px 4px 15px rgba(11, 11, 52, 0.25);
+    border-radius: 6px;
+    text-align: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-family: 'SLEMAN DEMO 400';
+
+}

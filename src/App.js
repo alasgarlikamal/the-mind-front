@@ -6,6 +6,7 @@ import Lobby from './Components/Lobby/Lobby'
 import Error from './Components/ErrorPage/Error'
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import GameRoom from "./Components/GameRoom/GameRoom";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route exact path="/settings" element={<ProfileUpdate />}></Route>
           <Route exact path="/lobby" element={<Lobby />}></Route>
           <Route exact path="/waiting" element={<WaitingRoom />}></Route>
+          <Route exact path="/gameroom" element={<GameRoom/>}></Route>
           <Route exact path="/404" element={<Error />}></Route>
         </Routes>
       </div>
