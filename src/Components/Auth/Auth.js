@@ -5,7 +5,9 @@ import { Box, Input, useDisclosure, Flex, Text, Button,Select,Heading,AlertDialo
   AlertDialogOverlay,
   AlertDialogCloseButton,
   FormControl,
-  FormErrorMessage
+  FormErrorMessage,
+  Alert,
+  AlertIcon
 } from "@chakra-ui/react";
 import React from 'react'
 import { useState,useRef } from "react";
@@ -87,7 +89,13 @@ export default function Auth() {
       <Heading fontSize={"5xl"}>Sign in to The Mind</Heading>
       <form>
       <Box lineHeight={"3.5em"}  >
-        {errorMessage && <Text color="red">{errorMessage}</Text>}
+        {errorMessage &&
+          <Flex justifyContent={'center'}>
+          <Alert status='error' height={'2em'} width={'1wv'} borderRadius={'0.5em'}>
+          <AlertIcon />
+          {errorMessage}
+        </Alert>
+          </Flex>}
         <Input mb={"1em"} mt={"1em"} fontSize={"1.3em"} height={"2.5em"}  onChange={(e) => setsignInEmail(e.target.value)} bg={"#F4F8F7"} borderRadius={10} border={"none"} type='email' placeholder="email" required w={"55%"} />
         <Input  fontSize={"1.3em"} height={"2.5em"} onChange={(e) => setSignInPassword(e.target.value)} bg={"#F4F8F7"} borderRadius={10} border={"none"} type='password' placeholder="password" required w={"55%"} />
         <Text p={0} color={"gray"}><a href="src/Components/Auth/auth#Auth.js">Forgot your password?</a></Text>
