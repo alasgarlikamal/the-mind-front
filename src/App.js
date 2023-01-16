@@ -4,6 +4,7 @@ import ProfileUpdate from './Components/ProfileUpdate/ProfileUpdate'
 import WaitingRoom from './Components/WaitingRoom/WaitingRoom';
 import Lobby from './Components/Lobby/Lobby'
 import Error from './Components/ErrorPage/Error'
+import Statistics from './Components/Statistics/Statistics'
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
@@ -18,6 +19,7 @@ function App() {
           <Route exact path="/lobby" element={<Lobby />}></Route>
           <Route exact path="/waiting" element={<WaitingRoom />}></Route>
           <Route exact path="/404" element={<Error />}></Route>
+          <Route exact path="/statistics" element={<Statistics />}></Route>
         </Routes>
       </div>
     </Router>
