@@ -7,10 +7,12 @@ import Error from './Components/ErrorPage/Error'
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import GameRoom from "./Components/GameRoom/GameRoom";
+import Navbar from "./Components/Navbar/Navbar";
 
 function App() {
   return (
     <Router>
+      <Navbar/>
       <div className="App">
         <Routes>
           <Route exact path="/auth" element={<Auth />}></Route>
