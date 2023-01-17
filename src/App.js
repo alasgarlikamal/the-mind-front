@@ -5,8 +5,10 @@ import WaitingRoom from './Components/WaitingRoom/WaitingRoom';
 import Lobby from './Components/Lobby/Lobby'
 import Error from './Components/ErrorPage/Error'
 import Statistics from './Components/Statistics/Statistics'
+import Votekick from "./Components/Votekick/Votekick";
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
           <Route exact path="/waiting" element={<WaitingRoom />}></Route>
           <Route exact path="/404" element={<Error />}></Route>
           <Route exact path="/statistics" element={<Statistics />}></Route>
+          <Route exact path="/votekick" element ={<Votekick />}></Route>
         </Routes>
       </div>
     </Router>
