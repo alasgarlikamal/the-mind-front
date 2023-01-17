@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'Sleman';
+    font-style: normal;
+    src: url('../../fonts/SLEMAN\ DEMO\ 400.ttf');
+}
+
+.card div{
+    font-family: Sleman;
+    box-shadow: none;
+}
+
+.hoverable:hover {
+    
+    translate: -11vh;
+    transition: 0.5s;
+}
+
+.hoverable:not(:hover){
+    transition: 0.5s;
+}
+
+.sideRow {
+    transform: rotate(90deg);
+}
+
+
