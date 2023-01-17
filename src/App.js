@@ -7,6 +7,7 @@ import Error from './Components/ErrorPage/Error'
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { SocketContext, socket } from "./context/SocketContext";
+import Game from "./Components/Game/Game";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route exact path="/lobby" element={<Lobby />}></Route>
             <Route exact path="/waiting" element={<WaitingRoom />}></Route>
             <Route exact path="/404" element={<Error />}></Route>
+            <Route exact path='game' element={<Game />}></Route>
           </Routes>
         </SocketContext.Provider>
       </div>
