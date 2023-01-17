@@ -6,6 +6,7 @@ import Lobby from './Components/Lobby/Lobby'
 import Error from './Components/ErrorPage/Error'
 import Statistics from './Components/Statistics/Statistics'
 import Votekick from "./Components/Votekick/Votekick";
+import Disconnected  from "./Components/Disconnected/Disconnected";
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="/404" element={<Error />}></Route>
           <Route exact path="/statistics" element={<Statistics />}></Route>
           <Route exact path="/votekick" element ={<Votekick />}></Route>
+          <Route exact path="/Disconnected" element ={<Disconnected />}></Route>
         </Routes>
       </div>
     </Router>

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Box,Button,Avatar,Text,Input,Flex, Icon} from "@chakra-ui/react";
-import { GrFormClose,GrFormCheckmark } from "react-icons/gr";
 export default function Votekick() {
   return (
     <Flex justifyContent={"center"} mt={"10px"}>
