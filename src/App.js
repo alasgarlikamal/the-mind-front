@@ -9,12 +9,17 @@ import Votekick from "./Components/Votekick/Votekick";
 import Disconnected  from "./Components/Disconnected/Disconnected";
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { SocketContext, socket } from "./context/SocketContext";
+import Game from "./Components/Game/Game";
 
 
 function App() {
   return (
+
     <Router>
       <div className="App">
+
+        <SocketContext.Provider value={socket}>
         <Routes>
           <Route exact path="/auth" element={<Auth />}></Route>
           <Route exact path="/about" element={<Cards />}></Route>
@@ -25,7 +30,10 @@ function App() {
           <Route exact path="/statistics" element={<Statistics />}></Route>
           <Route exact path="/votekick" element ={<Votekick />}></Route>
           <Route exact path="/Disconnected" element ={<Disconnected />}></Route>
+          <Route exact path='game' element={<Game />}></Route>
         </Routes>
+        </SocketContext.Provider>
+
       </div>
     </Router>
   );
