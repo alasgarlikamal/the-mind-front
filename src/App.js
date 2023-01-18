@@ -8,6 +8,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import GameRoom from "./Components/GameRoom/GameRoom";
 import Navbar from "./Components/Navbar/Navbar";
+import Navbar2 from "./Components/Navbar/Navbar2";
 
 function App() {
   return (
