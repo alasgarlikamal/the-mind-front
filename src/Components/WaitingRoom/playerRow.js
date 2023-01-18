@@ -34,7 +34,6 @@ export default function PlayerRow({playerData, roomData}) {
     
     setPlayer(playerData);
     setRoom(roomData);
-    console.log(playerData)
 
     getRoles();
 
