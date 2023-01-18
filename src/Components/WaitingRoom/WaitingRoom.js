@@ -31,11 +31,13 @@ const CreateJoin = () => {
     fetchRoomData();
 
     socket.on('playerJoined', () => fetchRoomData());
-    socket.on('reconnected', () => fetchRoomData());
+    socket.on('lobbyReconnect', () => fetchRoomData());
+    socket.on('gameReconnect', () => navigate('/game'));
     socket.on('playerLeft', () => fetchRoomData());
     socket.on('playerReady', () => fetchRoomData());
     socket.on('playerUnReady', () => fetchRoomData());
-    socket.on('kicked', () => navigate('/lobby'))
+    socket.on('kicked', () => navigate('/lobby'));
+
     socket.on('gameNotStarted', (data) => setStartGameStatus({status: false, message: data.message}));
 
   }, [socket, setValue, navigate]);
