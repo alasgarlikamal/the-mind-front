@@ -50,9 +50,17 @@ const CreateJoin = () => {
       navigate('/waiting');
     });
 
-    socket.on('reconnected', () => {
+    socket.on('lobbyReconnect', () => {
       navigate('/waiting');
     });
+
+    socket.on('gameReconnect', () => {
+      navigate('/game');
+    });
+
+    socket.on('gameStarted', () => {
+      navigate('/game');
+    })
   }, [navigate, socket]);
 
   if (errorMessage) {
