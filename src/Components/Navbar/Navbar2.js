@@ -2,8 +2,6 @@ import {
     Box,
     Flex,
     Link,
-    Stack,
-    useColorMode,
     Image
   } from "@chakra-ui/react";
 import React, { useState, useEffect} from 'react'

@@ -9,11 +9,13 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import GameRoom from "./Components/GameRoom/GameRoom";
 import Navbar from "./Components/Navbar/Navbar";
 import Navbar2 from "./Components/Navbar/Navbar2";
+import LogOut from "./Components/Navbar/LogOut";
+
 
 function App() {
   return (
     <Router>
-      <Navbar/>
+      {/* <Navbar/> */}
       <div className="App">
         <Routes>
           <Route exact path="/auth" element={<Auth />}></Route>
@@ -23,6 +25,8 @@ function App() {
           <Route exact path="/waiting" element={<WaitingRoom />}></Route>
           <Route exact path="/gameroom" element={<GameRoom/>}></Route>
           <Route exact path="/404" element={<Error />}></Route>
+          <Route exact path="/logout" element={<LogOut/>}></Route>
+
         </Routes>
       </div>
     </Router>

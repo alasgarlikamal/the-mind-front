@@ -4,6 +4,7 @@ import { Avatar, Box, Flex, Text, Image } from '@chakra-ui/react'
 import settings from '../../images/settings.png'
 import profileicon2 from '../../images/profileicon2.png'
 import logout from '../../images/logout.png'
+import LogOut from './LogOut'
 
 const DropdownProfile = () => {
   return (
@@ -23,11 +24,11 @@ const DropdownProfile = () => {
         </Box>
         <Flex flexDirection={'column'} w='2rem' align='space between' marginTop={'-0.5rem'}>
 
-            <Flex alignContent={'center'} align='space between' w={'5rem'}>
+            <Flex alignContent={'center'} align='space between' w={'4.8rem'}>
             <Box>
                 <Image src={profileicon2}></Image>
             </Box>
-            <Text>Profile</Text>
+            <Text marginTop={'1.7rem'} fontSize='1rem'>Profile</Text>
             </Flex>
 
             <Flex alignContent={'center'} w={'6rem'} marginTop='-15px'>
@@ -37,7 +38,7 @@ const DropdownProfile = () => {
             <Text>Settings</Text>
             </Flex>
 
-            <Flex alignContent={'center'} w={'4rem'} marginTop='-15px'>
+            <Flex alignContent={'center'} w={'3.7rem'} marginTop='-15px'>
             <Box>
             <Image src={logout}></Image>
             </Box>
@@ -45,6 +46,8 @@ const DropdownProfile = () => {
             </Flex>
         </Flex>
     </div>
+
+
     
   )
 }
