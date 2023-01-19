@@ -13,6 +13,7 @@ import DropdownProfile from "./DropdownProfile";
 
 const Navbar = () => {
     const [selected, setSelected] = useState("")
+    const [open, setOpen] = useState(false);
     const location = useLocation();
 
   useEffect(() => {
@@ -74,8 +75,8 @@ const Navbar = () => {
         
       </Flex>
       <Box>
-        <Image marginLeft='84rem'  marginTop='-2.6rem' cursor='pointer' src={profileicon}/>
-        <DropdownProfile classname='dropdownProfile' />
+        <Image onClick={() => {setOpen(!open)}} className="menu-trigger" marginLeft='84rem'  marginTop='-2.6rem' cursor='pointer' src={profileicon}/>
+        <DropdownProfile open = {open} classname='dropdownProfile' />
       </Box>
 
         

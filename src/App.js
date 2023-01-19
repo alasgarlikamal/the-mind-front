@@ -15,7 +15,7 @@ import LogOut from "./Components/Navbar/LogOut";
 function App() {
   return (
     <Router>
-      {/* <Navbar/> */}
+      <Navbar/>
       <div className="App">
         <Routes>
           <Route exact path="/auth" element={<Auth />}></Route>
