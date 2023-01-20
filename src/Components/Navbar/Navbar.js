@@ -46,7 +46,7 @@ const Navbar = () => {
       marginBottom='30px'
       bg="transparent"
       position={'fixed'}
-      
+      zIndex='999'
     >
       <Box align="center" mr={5} >
         <Link href="/mainpage" fontWeight="600" color="#50C9E9" fontFamily='Montserrat' lineHeight='1.905rem' fontSize='25px' >
