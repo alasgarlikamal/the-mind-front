@@ -24,6 +24,11 @@ const CreateJoin = () => {
       const user = await getUserInfo();
       setUser(user);
       const data = await getRoomByPlayerUsername(user.username);
+
+      if (!data) {
+        navigate('/lobby');
+        return;
+      }
       setRoom(data);
       setValue(data.id);
     }
