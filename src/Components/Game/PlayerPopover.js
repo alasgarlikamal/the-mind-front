@@ -1,7 +1,14 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Avatar, Button, Flex, Popover, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, Portal, Text } from '@chakra-ui/react'
 import { NotAllowedIcon } from '@chakra-ui/icons'
+import { SocketContext } from '../../context/SocketContext';
 const PlayerPopover = ({player}) => {
+
+    const socket = useContext(SocketContext);
+
+    const startVoteKick = () => {
+        socket.emit('voteKickPlayerStart', {username: player?.username })
+    }
 
     return (
         <>
@@ -17,7 +24,7 @@ const PlayerPopover = ({player}) => {
                     <Flex flexDirection={'column'} gap={1} justifyContent={'center'} alignItems={'center'} >
                         <Avatar size={'xl'} src={player?.image}></Avatar>
                         <Text textAlign={'center'} fontWeight={"bold"} color={'#02162F'}>{player?.username}</Text>
-                        <Button bg="#02162F" _hover={{bg:"#02162F"}} color={'white'} leftIcon={<NotAllowedIcon/>}>Votekick</Button>
+                        <Button bg="#02162F" _hover={{bg:"#02162F"}} color={'white'} onClick={startVoteKick} leftIcon={<NotAllowedIcon/>}>Votekick</Button>
                     </Flex>
                 </PopoverBody>
                 </PopoverContent>
