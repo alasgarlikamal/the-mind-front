@@ -5,7 +5,6 @@ import WaitingRoom from './Components/WaitingRoom/WaitingRoom';
 import Lobby from './Components/Lobby/Lobby'
 import Error from './Components/ErrorPage/Error'
 import Statistics from './Components/Statistics/Statistics'
-import Votekick from "./Components/Game/Votekick";
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { SocketContext, socket } from "./context/SocketContext";
