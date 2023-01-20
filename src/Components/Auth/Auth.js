@@ -149,7 +149,7 @@ export default function Auth() {
                 <AlertDialogHeader textAlign={"center"} >Just one more step...</AlertDialogHeader>
                 <AlertDialogCloseButton />
                 <AlertDialogBody textAlign={"center"} >
-                We've sent a verification email to <a href="src/Components/Auth/auth#Auth.js" className="mail-link" >murad.isayev@ufaz.az.</a><br />
+                We've sent a verification email to <a href="src/Components/Auth/auth#Auth.js" className="mail-link" >{userSignUp.email}.</a><br />
                 Please verify your email address to log into TheMind<br />
                 <CiMail className="CiMail" />
                 </AlertDialogBody>
