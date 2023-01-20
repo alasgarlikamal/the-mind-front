@@ -7,19 +7,14 @@ import {
 import React, { useState, useEffect} from 'react'
 import profileicon from '../../images/profileicon.svg'
 import { useLocation } from "react-router";
-import DropdownProfile from "./DropdownProfile";
-import LogOut from "./LogOut";
+import register from '../../images/register.png'
+import login from '../../images/login.png'
 
 
 
-const Navbar = () => {
+const Navbar2 = () => {
     const [selected, setSelected] = useState("")
-    const [open, setOpen] = useState(false);
     const location = useLocation();
-    const [isOpenModal, setOpenModal] = useState(false);
-
-
-
 
   useEffect(() => {
     const path = location.pathname;
@@ -32,8 +27,6 @@ const Navbar = () => {
     }
   }, [location]);
 
-  console.log(isOpenModal);
-
   return (
     <>
    <Flex
@@ -41,15 +34,15 @@ const Navbar = () => {
       align="baseline"
       justify="flex-start"
       wrap="wrap"
-      padding="1.5rem"
+      padding="1rem"
       marginLeft='40px'
       marginBottom='30px'
       bg="transparent"
       position={'fixed'}
-      zIndex='999'
+      
     >
       <Box align="center" mr={5} >
-        <Link href="/mainpage" fontWeight="600" color="#50C9E9" fontFamily='Montserrat' lineHeight='1.905rem' fontSize='25px' >
+        <Link href="#" fontWeight="600" color="#50C9E9" fontFamily='Montserrat' lineHeight='1.905rem' fontSize='25px' >
           THE MIND
         </Link>
       </Box>
@@ -59,7 +52,7 @@ const Navbar = () => {
         align="center"
         justify="space-around"
         textAlign="center"  
-        w={"35em"}
+        w={"25em"}
         ml={"8%"}
         
       >
@@ -82,18 +75,18 @@ const Navbar = () => {
         
       </Flex>
       <Box>
-        <Image onClick={() => {setOpen(!open)}} marginLeft='84rem'  marginTop='-2.6rem' cursor='pointer' src={profileicon}/>
-        <DropdownProfile setOpenModal = {setOpenModal} open = {open} classname='dropdownProfile' />
+        <Image src={login} width='133px' height='41px' marginLeft='70rem'  marginTop='-3.1rem' cursor='pointer' />
+      </Box>
+      <Box>
+        <Image src={register} width='133px' height='41px' marginLeft='80rem'  marginTop='-4.1rem' cursor='pointer'   />
       </Box>
 
         
 
     </Flex>
-    
-    {isOpenModal && <LogOut setOpenModal = {setOpenModal} isOpenModal= {isOpenModal} />}
-
+  
     </>
   )
 }
 
-export default Navbar
+export default Navbar2;

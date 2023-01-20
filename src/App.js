@@ -11,13 +11,15 @@ import GameRoom from "./Components/GameRoom/GameRoom";
 import Navbar from "./Components/Navbar/Navbar";
 import { SocketContext, socket } from "./context/SocketContext";
 import Game from "./Components/Game/Game";
+import Navbar2 from "./Components/Navbar/Navbar2";
+import LogOut from "./Components/Navbar/LogOut";
 
 
 function App() {
   return (
 
     <Router>
-      <Navbar/>
+      <Navbar2/>
       <div className="App">
 
         <SocketContext.Provider value={socket}>
@@ -31,6 +33,8 @@ function App() {
           <Route exact path="/404" element={<Error />}></Route>
           <Route exact path="/statistics" element={<Statistics />}></Route>
           <Route exact path='/game' element={<Game />}></Route>
+          <Route exact path="/logout" element={<LogOut/>}></Route>
+
         </Routes>
         </SocketContext.Provider>
 
