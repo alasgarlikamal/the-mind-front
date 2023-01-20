@@ -1,6 +1,6 @@
 import React from 'react'
 import "./StatisticsStyles.css";
-import { Button,Avatar,Text,Input,Flex,Box,CircularProgress, CircularProgressLabel} from "@chakra-ui/react";
+import { Avatar,Text,Flex,Box,CircularProgress, CircularProgressLabel} from "@chakra-ui/react";
 export default function Statistics() {
   return (
     <div className="statisticsBody">
