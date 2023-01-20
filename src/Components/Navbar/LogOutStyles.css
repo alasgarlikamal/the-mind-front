@@ -1,16 +1,28 @@
 .modalBackground {
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(200, 200, 200);
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  background: inherit;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 998;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* add transition effect */
+  transition: opacity 0.5s ease-in-out;
   
+
+}
+
+
+
   .modalContainer {
     font-family: Montserrat;
-    position:absolute;
+    position: absolute;
     top: 250px;
     left: 425px;
     width: 646px;
@@ -20,6 +32,7 @@
     display: flex;
     flex-direction: column;
     padding: 25px;
+    z-index: 999;
   }
   
   .modalContainer .title {
@@ -88,7 +101,7 @@
       width: 300px;
       height: 100px;
       margin-left: 5rem;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
       margin-top: 50px;
       background: #02162F;
       border-radius: 7px;

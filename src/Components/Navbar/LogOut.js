@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./LogOutStyles.css";
 import { Button, Image } from "@chakra-ui/react";
 import xicon from '../../images/x.png'
 
-function LogOut({ setOpenModal }) {
+function LogOut(props) {
+
+  // const [isOpenModal, setOpenModal] = useState(false);
   return (
     <div className="modalBackground">
       <div className="modalContainer">
         <div className="titleCloseBtn">
-          <button>
+          <button onClick={() => props.setOpenModal(!props.isOpenModal)}>
             <Image width={'1rem'} src={xicon}></Image>
           </button>
         </div>

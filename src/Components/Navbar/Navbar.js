@@ -8,6 +8,7 @@ import React, { useState, useEffect} from 'react'
 import profileicon from '../../images/profileicon.svg'
 import { useLocation } from "react-router";
 import DropdownProfile from "./DropdownProfile";
+import LogOut from "./LogOut";
 
 
 
@@ -15,6 +16,10 @@ const Navbar = () => {
     const [selected, setSelected] = useState("")
     const [open, setOpen] = useState(false);
     const location = useLocation();
+    const [isOpenModal, setOpenModal] = useState(false);
+
+
+
 
   useEffect(() => {
     const path = location.pathname;
@@ -26,6 +31,8 @@ const Navbar = () => {
       setSelected("rules");
     }
   }, [location]);
+
+  console.log(isOpenModal);
 
   return (
     <>
@@ -42,7 +49,7 @@ const Navbar = () => {
       
     >
       <Box align="center" mr={5} >
-        <Link href="#" fontWeight="600" color="#50C9E9" fontFamily='Montserrat' lineHeight='1.905rem' fontSize='25px' >
+        <Link href="/mainpage" fontWeight="600" color="#50C9E9" fontFamily='Montserrat' lineHeight='1.905rem' fontSize='25px' >
           THE MIND
         </Link>
       </Box>
@@ -75,14 +82,16 @@ const Navbar = () => {
         
       </Flex>
       <Box>
-        <Image onClick={() => {setOpen(!open)}} className="menu-trigger" marginLeft='84rem'  marginTop='-2.6rem' cursor='pointer' src={profileicon}/>
-        <DropdownProfile open = {open} classname='dropdownProfile' />
+        <Image onClick={() => {setOpen(!open)}} marginLeft='84rem'  marginTop='-2.6rem' cursor='pointer' src={profileicon}/>
+        <DropdownProfile setOpenModal = {setOpenModal} open = {open} classname='dropdownProfile' />
       </Box>
 
         
 
     </Flex>
-  
+    
+    {isOpenModal && <LogOut setOpenModal = {setOpenModal} isOpenModal= {isOpenModal} />}
+
     </>
   )
 }

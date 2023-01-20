@@ -5,14 +5,15 @@ import settings from '../../images/settings.png'
 import profileicon2 from '../../images/profileicon2.png'
 import logout from '../../images/logout.png'
 import LogOut from './LogOut'
+import { Link } from 'react-router-dom'
 
 const DropdownProfile = (props) => {
-    const [open, setOpen] = useState(false);
+    const [isOpenModal, setOpenModal] = useState(false);
 
   return (
     
     <div className={`dropdownProfile ${props.open ? 'active' : 'inactive'}`}>
-        <Flex cursor={'pointer'} justifyContent={'center'}>
+        <Flex justifyContent={'center'}>
         <Box>
             <Avatar></Avatar>
         </Box>
@@ -26,9 +27,17 @@ const DropdownProfile = (props) => {
         </Box>
         <div>
             <ul>
+             
+                <Link to={'profile'}>
                 <DropdownItem img={profileicon2} text={'Profile'} />
+                </Link>
+                <Link to={'settings'}>
                 <DropdownItem img={settings} text={'Settings'} />
+                </Link>
+
+                <div onClick={() => props.setOpenModal(!isOpenModal)}>
                 <DropdownItem className={'logout'} img={logout} text={'Log Out'}/>
+                </div>
             </ul>
             </div>
 
