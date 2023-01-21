@@ -16,6 +16,7 @@ import { useNavigate } from "react-router";
 import ThrowingStartAlert from "./ThrowingStarAlert";
 import GameOver from "./GameOver";
 import Win from "./Win";
+import { getUserInfo } from "../../api/getUserInfo";
 
 const Game = () => {
 
@@ -33,7 +34,16 @@ const Game = () => {
     const { isOpen: isGameOverOpen, onOpen: onGameOverOpen, onClose: onGameOverClose } = useDisclosure();
     const { isOpen: isWinOpen, onOpen: onWinOpen, onClose: onWinClose } = useDisclosure();
 
+    
+      
+
     useEffect(() => {
+        async function getUser() {
+            const data = await getUserInfo();
+            !data && navigate('/auth')
+        }
+
+        getUser(); 
 
         socket.emit('getCards');
         socket.emit('getGameData');
