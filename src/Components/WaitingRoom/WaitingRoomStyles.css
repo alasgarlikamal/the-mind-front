@@ -1,6 +1,6 @@
 .PlayerList-container
 {
-    background-image: url('../../../public/images/waiting.png');
+    background-image: url('../../../public/images/image\ 3.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -10,6 +10,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: black;
 }
 .PlayerList
 {
