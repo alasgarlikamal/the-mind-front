@@ -4,6 +4,7 @@ import { useNavigate, useLocation } from 'react-router';
 
 import { getUserInfo } from '../../api/getUserInfo';
 import { Modal, ModalBody, ModalContent, ModalOverlay, Text, ModalCloseButton } from "@chakra-ui/react";
+import VideoModal from "../Home/VideoModal";
 
 
 
@@ -14,6 +15,7 @@ export const Navbar = () => {
     const [user, setUser] = useState({firstname: '', lastname: '', date_of_birth: '', username: '', email: '', avatar: {id: 0, imageUrl: ''}});
     const { isOpen: isLogoutOpen, onOpen: onLogoutopen, onClose: onLogoutClose } = useDisclosure();
     const [selected, setSelected] = useState("");
+    const { isOpen: isRulesOpen, onOpen: onRulesOpen, onClose: onRulesClose } = useDisclosure();
 
 
     useEffect(() => {
@@ -36,6 +38,7 @@ export const Navbar = () => {
 
     return (
         <Flex w='100w' h='auto' p='2%' alignItems={'center'}>
+            <VideoModal isOpen={isRulesOpen} onClose={onRulesClose}/>
              <Box align="center" mr={5} >
                 <Link onClick={() => navigate('/home')} fontWeight="600" color="#50C9E9" fontSize='25px' >
                 THE MIND
@@ -48,7 +51,7 @@ export const Navbar = () => {
                     Play
                 </Link>
                 <Spacer />
-                <Link onClick={() => navigate('/rules')} fontWeight="400" color={selected === '/rules' ? '#50C9E9' : 'white'}  fontSize='18px' >
+                <Link onClick={onRulesOpen} fontWeight="400" color={selected === '/rules' ? '#50C9E9' : 'white'}  fontSize='18px' >
                     Rules
                 </Link>
                 <Spacer />
