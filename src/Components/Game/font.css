@@ -6,7 +6,7 @@
     src: url('../../fonts/SLEMAN\ DEMO\ 400.ttf');
 }
 
-.card div{
+.gamecard div{
     font-family: Sleman;
     box-shadow: none;
 }
