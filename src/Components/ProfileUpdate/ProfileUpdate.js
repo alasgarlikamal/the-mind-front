@@ -4,7 +4,7 @@ import "./ProfileUpdateStyles.css"
 import { InputGroup, InputRightElement, Box,SimpleGrid,Avatar, FormLabel,Input, Flex, Text, Button, Heading,FormControl, Modal, useDisclosure, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalFooter, ModalCloseButton} from "@chakra-ui/react";
 import { getUserInfo } from '../../api/getUserInfo';
 import { updateUserInfo } from '../../api/updateUserInfo';
-import { CheckCircleIcon, WarningIcon, RepeatIcon } from '@chakra-ui/icons'
+import { CheckCircleIcon, WarningIcon } from '@chakra-ui/icons'
 import validateUsername from '../../api/validateUsername';
 import updateUsername from '../../api/updateUsername';
 import getAvatars from '../../api/getAvatars';
@@ -48,14 +48,6 @@ export default function ProfileUpdate() {
 
     function onPhotoChange () 
     {  
-
-      // setUser({...user, avatar: avatars[index]})
-      // setIndex(avatars.indexOf(user.avatar.id) + 1)
-      // if (index === avatars.length-1)
-      // {
-      // setIndex(0)
-      // }
-      console.log(user.avatar)
 
       const newAvatar = avatars.find(avatar => avatar.id === user.avatar.id + 1)
 
@@ -115,10 +107,13 @@ export default function ProfileUpdate() {
     <Text>Update your photos and personal details here.</Text>
         </Box>
     <Box justifySelf={"flex-end"}>
-        <Avatar  className="avatar" w={"7em"} h={"7em"} src={process.env.REACT_APP_API_URL + user.avatar.imageUrl }>
-        <RepeatIcon boxSize={7} bg={'white'} color={'black'} borderRadius={'50%'} className='buttonImage' onClick={onPhotoChange} />
+      <Flex flexDir={'column'}>
+
+        <Avatar onClick={onPhotoChange} _hover={{cursor: 'pointer'}}  className="avatar" w={"7em"} h={"7em"} src={user.avatar.imageUrl }>
         </Avatar>
-    </Box>
+        <Text w='auto'>Click to change!</Text>
+      </Flex>
+    </Box> 
     
     </Box>
 
