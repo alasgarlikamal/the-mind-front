@@ -17,7 +17,7 @@ const Cards = () => {
   }, []);
 
   return (
-    <Box w='100vw' h='100vh' bgColor='black' backgroundImage={"url('/images/image 3.png')"} bgRepeat={'no-repeat'} bgSize={'cover'}>
+    <Box w='100vw' h='100vh' bgColor='black' bgPos={'center'} backgroundImage={"url('/images/image 3.png')"} bgRepeat={'no-repeat'} bgSize={'cover'}>
       <Navbar />
       <div className="cards-container">
         {about && about.map((item) => {

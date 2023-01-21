@@ -106,7 +106,7 @@ export default function ProfileUpdate() {
     }
 
     return (
-    <Flex flexDir='column' bgColor='black' h='100vh' bgImage={"url('/images/image 3.png')"} bgRepeat='no-repeat' bgSize={'cover'}>
+    <Flex flexDir='column' bgColor='black' h='100vh' bgPos={'center'} bgImage={"url('/images/image 3.png')"} bgRepeat='no-repeat' bgSize={'cover'}>
     <Navbar />
    <Flex mt={'2vh'} className='main-profile-wrapper'  >
     <Box  className="box-header" h={"30%"} >
