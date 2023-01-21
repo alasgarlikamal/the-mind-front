@@ -22,6 +22,7 @@ const CreateJoin = () => {
     async function fetchRoomData() {
 
       const user = await getUserInfo();
+      !user && navigate('/auth');
       setUser(user);
       const data = await getRoomByPlayerUsername(user.username);
 
