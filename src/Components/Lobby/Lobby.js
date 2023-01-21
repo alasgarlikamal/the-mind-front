@@ -6,13 +6,13 @@ import { IoIosArrowBack } from "react-icons/io";
 import { getUserInfo } from '../../api/getUserInfo';
 import { useNavigate } from "react-router";
 import { SocketContext } from '../../context/SocketContext';
+import { Navbar } from "../Navbar/Navbar";
 
 const CreateJoin = () => {
 
   const navigate = useNavigate();
   const [isFlipped, setIsFlipped] = React.useState(false);
   const [user, setUser] = useState({firstname: '', lastname: '', date_of_birth: '', username: '', email: '', avatar: {imageUrl: ''}});
-  const [errorMessage, setErrorMessage] = useState(null);
   const [joinRoomError, setJoinRoomError] = useState({error: false, message: ''});
   const inputReference = useRef(null);
   const socket = useContext(SocketContext);
@@ -34,10 +34,7 @@ const CreateJoin = () => {
   useEffect(() => {
     async function getUser() {
       const data = await getUserInfo();
-      if (!data) {
-          setErrorMessage("Something went wrong");
-          return; 
-      }
+      !data && navigate('/auth')
       setUser(data);
     }
     getUser(); 
@@ -63,12 +60,10 @@ const CreateJoin = () => {
     })
   }, [navigate, socket]);
 
-  if (errorMessage) {
-    return <div>{errorMessage}</div>;
-  }
-
   return (
     <div className="createjoin">
+      <Navbar/>
+      <div className="lobbycard">
       <CardFlip isFlipped={isFlipped}>
         <div className="lobbycard-front">
           <Avatar w={"5em"} h={"5em"} src={process.env.REACT_APP_API_URL + user.avatar.imageUrl} mb={"1em"}/>
@@ -101,6 +96,7 @@ const CreateJoin = () => {
 
       </CardFlip>
       <Text style={{ position: 'absolute', bottom: 0 }} fontSize={'xs'} marginBottom={'1vw'} textAlign={'center'} color={'#9B9B9B'}>All rights reserved © 2022 The Mind</Text>
+      </div>
     </div>
   );
 };
