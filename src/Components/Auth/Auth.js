@@ -9,13 +9,15 @@ import { Box, Input, useDisclosure, Flex, Text, Button,Select,Heading,AlertDialo
   Alert,
   AlertIcon
 } from "@chakra-ui/react";
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState,useRef } from "react";
 import "./AuthStyles.css";
 import { CiMail } from "react-icons/ci";
 import signIn from "../../api/login";
 import { useNavigate } from "react-router";
 import { register } from "../../api/register";
+import { Navbar } from "../Navbar/Navbar";
+import { getUserInfo } from "../../api/getUserInfo";
 
 export default function Auth() {
   //Shout out to my yeti Ayxan
@@ -33,6 +35,14 @@ export default function Auth() {
 
   const [userSignUp, setUserSignUp] = useState({firstname: '', lastname: '', email: '', password:'', date_of_birth:'', avatarId: 1, gender: true })
   const confirmPasswordRef = useRef('');
+
+  useEffect(()=> {
+    async function getUser() {
+      const data = await getUserInfo();
+      data && navigate('/home')
+    }
+    getUser(); 
+  }, [navigate])
 
   const signInClick = async (e) => {
     e.preventDefault();
@@ -83,6 +93,8 @@ export default function Auth() {
 
   if (!clicked) {
     return (
+      <Flex bgColor={'black'} bgImage={"url('/images/image 3.png')"} flexDir='column' justifyContent={'center'} bgRepeat='no-repeat' bgSize={'cover'} h='100vh'>
+        <Navbar/>
   <Flex className="main-wrapper"  >
     <Flex className={clicked ? "left  left-on-click" : "left"}>
           <Box  w={"80%"} >
@@ -114,11 +126,15 @@ export default function Auth() {
     </Flex>
         
   </Flex>
+  <Text  w='auto' ml='auto' mr='auto' fontSize={'xs'} marginBottom={'1vw'} textAlign={'center'} color={'#9B9B9B'}>All rights reserved © 2022 The Mind</Text>
+  </Flex>
     )
   }
     else 
     {
       return (
+        <Flex bgColor={'black'} bgImage={"url('/images/image 3.png')"} bgRepeat='no-repeat' bgSize={'cover'} h='100vh' flexDir='column'>
+        <Navbar/>
         <Flex className={isOpen ? "main-wrapper blurred-background" : "main-wrapper"}  >
          <Flex className={clicked ? "left  left-on-click" : "left"} color={"black"} bg={"white"} w={"70%"} textAlign={"center"} justifyContent={"center"} alignItems={"center"}  >
           <Box w={"50%"} gap={2} >
@@ -182,6 +198,8 @@ export default function Auth() {
             </Box>  
         </Flex>
         
+      </Flex>
+      <Text  w='auto' ml='auto' mr='auto' fontSize={'xs'} marginBottom={'1vw'} textAlign={'center'} color={'#9B9B9B'}>All rights reserved © 2022 The Mind</Text>
       </Flex>
       )
     }
