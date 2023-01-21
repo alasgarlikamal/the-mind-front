@@ -155,7 +155,7 @@ export default function Auth() {
                     <option value={true}>Male</option>
                     <option value={false}>Female</option>
                 </Select>
-                <Button type="submit" transitionDuration={"0.7s"} _hover={{bg:"white", color:"#010E1F" }} border={"1px solid #010E1F"} w={"45%"} p={5} borderRadius={10} bg={"#010E1F"} color={"white"} >Sign Up</Button>
+                <Button type="submit" size={'sm'} transitionDuration={"0.7s"} _hover={{bg:"white", color:"#010E1F" }} border={"1px solid #010E1F"} w={"40%"} p={5} borderRadius={10} bg={"#010E1F"} color={"white"} >Sign Up</Button>
               </form>
             </Box>
             <AlertDialog motionPreset='slideInBottom' leastDestructiveRef={cancelRef}  isOpen={isOpen} onClose={onClose} isCentered>
