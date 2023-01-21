@@ -66,7 +66,7 @@ const CreateJoin = () => {
       <div className="lobbycard">
       <CardFlip isFlipped={isFlipped}>
         <div className="lobbycard-front">
-          <Avatar w={"5em"} h={"5em"} src={process.env.REACT_APP_API_URL + user.avatar.imageUrl} mb={"1em"}/>
+          <Avatar w={"5em"} h={"5em"} src={user.avatar.imageUrl} mb={"1em"}/>
           <div className="front-text"  >
             <Text color="white" mb={"2em"}>{user.username}</Text>
             </div>
