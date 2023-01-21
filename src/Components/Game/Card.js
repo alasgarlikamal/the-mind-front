@@ -5,7 +5,7 @@ const Card = ({ number, isHoverable, isSideRow }) => {
 
 
     return (
-        <Flex className={`card ${isSideRow && 'sideRow'} ${isHoverable && 'hoverable'}`}  justifyContent={'center'} alignItems={'center'} bgColor={'#0A0A1F'} w={'15vh'} h={'22.5vh'} border={'2px solid white'} borderRadius={'6px'} flexDirection={'column'}>
+        <Flex className={`gamecard ${isSideRow && 'sideRow'} ${isHoverable && 'hoverable'}`}  justifyContent={'center'} alignItems={'center'} bgColor={'#0A0A1F'} w={'15vh'} h={'22.5vh'} border={'2px solid white'} borderRadius={'6px'} flexDirection={'column'}>
             <Flex>
                 <Center color={'white'} fontSize={'3xl'} w={'10vh'}>
                     {number}
