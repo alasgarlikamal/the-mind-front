@@ -1,13 +1,9 @@
-import { Box, Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, useDisclosure } from "@chakra-ui/react";
+import { Box, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay } from "@chakra-ui/react";
 
 
-function VideoModal(props) {
-  const {isOpen, onClose, onOpen} = useDisclosure();
-
+function VideoModal({isOpen, onClose}) {
 
   return (
-    <>
-      <Button onClick={onOpen} _hover={'none'}  position={'relative'} variant='outline' width="11.688rem" height='4.25rem' color='white' fontSize='2.063rem' fontFamily='Montserrat' borderRadius='0.75rem' right='20.5rem' top='6.25rem'  boxShadow='6px 4px 15px rgba(11, 11, 52, 0.25);'>Rules</Button>
     <Modal
   
      isOpen={isOpen}
@@ -33,7 +29,6 @@ function VideoModal(props) {
             </ModalBody>
         </ModalContent>
     </Modal>
-    </>
   );
 }
 
