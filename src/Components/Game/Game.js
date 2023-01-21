@@ -132,7 +132,7 @@ const Game = () => {
 
     if(gameData){
     return (
-        <Box  backgroundImage={"url('/images/Rectangle 46.png')"} bgRepeat={'no-repeat'} bgSize={'cover'} h={"100vh"} w={"100vw"}>
+        <Box  backgroundImage={"url('/images/Rectangle 46.png')"} bgRepeat={'no-repeat'} bgPos='center' bgSize={'cover'} overflow='hidden' h={"100vh"} w={"100vw"}>
 
             <Flex p={'2vh'}>
                 <Center color={'white'}  fontWeight={'bold'} bgGradient='linear(to-l, #0D366A, #01162F)' fontSize={'3xl'} h={'8vh'} w={'13vw'} borderRadius={'1vh'}>
