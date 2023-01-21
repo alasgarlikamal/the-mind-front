@@ -25,8 +25,8 @@ function Card({ onClick, back, front, photo, used }) {
               marginTop: "-1vw",
               // marginTop: "5rem",
               borderRadius: "50%",
-              border: "2px solid red",
-              filter: "drop-shadow(0 0 8px green)",
+              // border: "2px solid red",
+              // filter: "drop-shadow(0 0 8px green)",
             }}
           ></img>
           {back}
