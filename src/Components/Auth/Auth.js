@@ -33,7 +33,7 @@ export default function Auth() {
   const [errorMessage, setErrorMessage] = useState();
   const [isError, setError] = useState(null);
 
-  const [userSignUp, setUserSignUp] = useState({firstname: '', lastname: '', email: '', password:'', date_of_birth:'', avatarId: 1, gender: true })
+  const [userSignUp, setUserSignUp] = useState({firstname: '', lastname: '', email: '', password:'', date_of_birth:'', avatarId: 15, gender: true })
   const confirmPasswordRef = useRef('');
 
   useEffect(()=> {
