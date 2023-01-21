@@ -16,7 +16,9 @@ export default function Votekick({isOpen, onClose, voteKick}) {
   return (
     <AlertDialog
         motionPreset='slideInRight'
-        onClose={onClose}
+        onClose={ ()=>{
+          vote('no')
+          onClose();}}
         isOpen={isOpen}
         isCentered
       >
