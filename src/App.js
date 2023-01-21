@@ -9,6 +9,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { SocketContext, socket } from "./context/SocketContext";
 import Game from "./Components/Game/Game";
+import MainPage from "./Components/Home/MainPage";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route exact path="/404" element={<Error />}></Route>
           <Route exact path="/me" element={<Statistics />}></Route>
           <Route exact path='/game' element={<Game />}></Route>
+          <Route exact path='/home' element={<MainPage />}></Route>
 
         </Routes>
         </SocketContext.Provider>
