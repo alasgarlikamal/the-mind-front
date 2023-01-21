@@ -10,21 +10,28 @@ import updateUsername from '../../api/updateUsername';
 import getAvatars from '../../api/getAvatars';
 import { Navbar } from '../Navbar/Navbar';
 import { useNavigate } from 'react-router';
+import resetPassword from '../../api/resetPassword';
 
 export default function ProfileUpdate() {
     // const [index, setIndex] = useState(0)
     const [errorMessage, setErrorMessage] = useState(null);
     const navigate = useNavigate();
 
+    const [show, setShow] = useState(false)
+    const handlePassChangeClick = () => setShow(!show)
+
     const [avatars, setAvatars] = useState([]);
     const [originalUser, setOriginalUser] = useState({firstname: '', lastname: '', date_of_birth: '', avatar: {id: 0, imageUrl: ''} });
     const [user, setUser] = useState({firstname: '', lastname: '', date_of_birth: '', username: '', email: '', avatar: {id: 0, imageUrl: ''}});
     const [isUsernameValid, setIsUsernameValid] = useState(false);
     const [newUserName, setNewUserName] = useState('');
+    const [newPassword, setNewPassword] = useState('');
 
 
     const {isOpen: isResetOpen, onOpen: onResetOpen, onClose: onResetClose} = useDisclosure();
     const {isOpen: isUsernameChangeOpen, onOpen: onUsernameChangeOpen, onClose: onUsernameChangeClose} = useDisclosure();
+    const {isOpen: isPassResetOpen, onOpen: onPassResetOpen, onClose: onPassResetClose} = useDisclosure();
+    const {isOpen: isEmailConfirmOpen, onOpen: onEmailConfirmOpen, onClose: onEmailConfirmClose} = useDisclosure();
 
     useEffect(() => {
       async function getUserData() {
@@ -81,6 +88,20 @@ export default function ProfileUpdate() {
       setNewUserName(e.target.value);
       const data = await validateUsername(e.target.value);
       setIsUsernameValid(data);
+    }
+
+    const handlePasswordChange = (e) => {
+      setNewPassword(e.target.value);
+    }
+
+    const savePassword = async () => {
+      const data = await resetPassword(newPassword);
+      if (!data) {
+        return;
+      }
+
+      onPassResetClose();
+      onEmailConfirmOpen();
     }
 
     const saveUsername = async (username) => {
@@ -166,7 +187,7 @@ export default function ProfileUpdate() {
                 isReadOnly={true}
               />
             <InputRightElement width='4.5rem'>
-              <Button h='1.75rem' size='xs' colorScheme={'red'} >
+              <Button onClick={onPassResetOpen} h='1.75rem' size='xs' colorScheme={'red'} >
                  Reset
               </Button>
             </InputRightElement>
@@ -230,6 +251,52 @@ export default function ProfileUpdate() {
             <Button bg={"white"} variant='outline' mr="1em" color="#09264A" onClick={onUsernameChangeClose}>Cancel</Button>
             <Button type="Submit" className="saveB" bg={"#09264A"} color={"white"} onClick={()=> saveUsername(newUserName)}>Save</Button>
         </ModalFooter>
+        </ModalContent>
+    </Modal>
+
+    <Modal isOpen={isPassResetOpen} onClose={onPassResetClose}>
+        <ModalOverlay />
+        <ModalContent>
+        <ModalHeader>Reset Password</ModalHeader>
+        <ModalCloseButton />
+        <ModalBody>
+          
+        <InputGroup >
+        
+              <Input 
+                bg={"white"}
+                pr='4.5rem'
+                type={show ? 'text' : 'password'}
+                placeholder='New password'
+                min={8}
+                max={1024}
+                value={newPassword}
+                onChange={(e) => handlePasswordChange(e)}
+              />
+              <InputRightElement width='4.5rem'>
+                <Button h='1.75rem' size='sm' onClick={handlePassChangeClick}>
+                  {show ? 'Hide' : 'Show'}
+                </Button>
+              </InputRightElement>
+          </InputGroup>            
+        </ModalBody>
+
+        <ModalFooter>
+            <Button bg={"white"} variant='outline' mr="1em" color="#09264A" onClick={onPassResetClose}>Cancel</Button>
+            <Button type="Submit" className="saveB" bg={"#09264A"} color={"white"} onClick={()=> savePassword()}>Save</Button>
+        </ModalFooter>
+        </ModalContent>
+    </Modal>
+
+    <Modal isOpen={isEmailConfirmOpen} onClose={onEmailConfirmClose}>
+        <ModalOverlay />
+        <ModalContent>
+        <ModalHeader>Email sent</ModalHeader>
+        <ModalCloseButton />
+        <ModalBody>
+          Confirm your password reset by clicking the link in the email we sent you.
+        </ModalBody>
+        <ModalFooter></ModalFooter>
         </ModalContent>
     </Modal>
 
