@@ -8,10 +8,13 @@ import { CheckCircleIcon, WarningIcon, RepeatIcon } from '@chakra-ui/icons'
 import validateUsername from '../../api/validateUsername';
 import updateUsername from '../../api/updateUsername';
 import getAvatars from '../../api/getAvatars';
+import { Navbar } from '../Navbar/Navbar';
+import { useNavigate } from 'react-router';
 
 export default function ProfileUpdate() {
     // const [index, setIndex] = useState(0)
     const [errorMessage, setErrorMessage] = useState(null);
+    const navigate = useNavigate();
 
     const [avatars, setAvatars] = useState([]);
     const [originalUser, setOriginalUser] = useState({firstname: '', lastname: '', date_of_birth: '', avatar: {id: 0, imageUrl: ''} });
@@ -26,10 +29,7 @@ export default function ProfileUpdate() {
     useEffect(() => {
       async function getUserData() {
         const userData = await getUserInfo();
-        if (!userData) {
-            setErrorMessage("Something went wrong");
-            return; 
-        }
+        !userData && navigate('/auth')
         setUser(userData);
         setOriginalUser(userData);
       }
@@ -44,7 +44,7 @@ export default function ProfileUpdate() {
 
       getUserData(); 
       getAvatarData();
-    }, []);
+    }, [navigate]);
 
     function onPhotoChange () 
     {  
@@ -106,8 +106,9 @@ export default function ProfileUpdate() {
     }
 
     return (
-    
-   <Flex className='main-profile-wrapper'  >
+    <Flex flexDir='column' bgColor='black' h='100vh' bgImage={"url('/images/image 3.png')"} bgRepeat='no-repeat' bgSize={'cover'}>
+    <Navbar />
+   <Flex mt={'2vh'} className='main-profile-wrapper'  >
     <Box  className="box-header" h={"30%"} >
         <Box>
         <Heading>Hello {originalUser.firstname}!</Heading>
@@ -238,5 +239,7 @@ export default function ProfileUpdate() {
     </Modal>
 
    </Flex>  
+   </Flex>
+
   )
 }
