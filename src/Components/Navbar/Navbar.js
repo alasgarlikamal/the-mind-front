@@ -51,7 +51,7 @@ export const Navbar = () => {
                     Play
                 </Link>
                 <Spacer />
-                <Link onClick={onRulesOpen} fontWeight="400" color={selected === '/rules' ? '#50C9E9' : 'white'}  fontSize='18px' >
+                <Link onClick={() => {setSelected('/rules'); onRulesOpen();}} fontWeight="400" color={selected === '/rules' ? '#50C9E9' : 'white'}  fontSize='18px' >
                     Rules
                 </Link>
                 <Spacer />
