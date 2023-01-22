@@ -20,6 +20,7 @@ function App() {
 
         <SocketContext.Provider value={socket}>
         <Routes>
+          <Route exact path="/" element={<MainPage />}></Route>
           <Route exact path="/auth" element={<Auth />}></Route>
           <Route exact path="/about" element={<Cards />}></Route>
           <Route exact path="/settings" element={<ProfileUpdate />}></Route>
