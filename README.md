@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# The Mind Game
+<p align="center">
+<img height="300" src="https://github.com/alasgarlikamal/the-mind/assets/98516464/db9298f5-bbd3-4441-89d8-bf87efade8bf">
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Team members
+Created by: 
+| Team Lead | Frontend & Security | Frontend | Backend | Backend & UI/UX |
+|:---------------:|:---------------:|:-----------------:|:-----------------:|:------------:|
+| [Kamal Alasgarli](https://www.linkedin.com/in/alasgarlikamal/) | [Arif Abdullayev](https://www.linkedin.com/in/arif-abdullayev/) | [Nijat Abdullazada](https://www.linkedin.com/in/nijatabdullazada/) | [Amina Ismayilzada](https://www.linkedin.com/in/amina-ismayilzada/) | [Murad Isayev](https://www.linkedin.com/in/muradisayev/) |
+| <a href="https://github.com/alasgarlikamal"><img height="30" src="https://github.com/alasgarlikamal/the-mind/assets/98516464/24f228e8-0f68-4556-b850-bc08c4192c8f"></a> | <a href="https://github.com/Cushz"><img height="30" src="https://github.com/alasgarlikamal/the-mind/assets/98516464/24f228e8-0f68-4556-b850-bc08c4192c8f"></a> | <a href="https://github.com/neecatt"><img height="30" src="https://github.com/alasgarlikamal/the-mind/assets/98516464/24f228e8-0f68-4556-b850-bc08c4192c8f"></a> | <a href="https://github.com/Amina-Ismayilzada"><img height="30" src="https://github.com/alasgarlikamal/the-mind/assets/98516464/24f228e8-0f68-4556-b850-bc08c4192c8f"></a> | <a href="https://github.com/MuradIsayev"><img height="30" src="https://github.com/alasgarlikamal/the-mind/assets/98516464/24f228e8-0f68-4556-b850-bc08c4192c8f"></a> |
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+for Software Engineering Course at [UFAZ](https://www.ufaz.az/en/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Introduction
+What's The Mind Game?
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The deck contains cards numbered 1-100, and during the game, you try to complete 12, 10, or 8 levels of play with 2, 3, or 4 players. In a level, each player receives a hand of cards equal to the number of the level: one card in level 1, two cards in level 2, etc. Collectively you must play these cards into the center of the table on a single discard pile in ascending order but you cannot communicate with one another in any way as to which cards you hold. You stare into one another's eyes, and when you feel the time is right, you play your lowest card. If no one holds a card lower than what you played, great, the game continues! If someone did, all players discard face up all cards lower than what you played, and you lose one life. 
 
-### `npm test`
+_See [link](https://boardgamegeek.com/boardgame/244992/the-mind) for more info._
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tech Stack
+### Frontend
+| Javascript | React | Socket.io |
+| ---------- | ----- | --------- |
+### Backend
+| Typescript | NestJS | TypeORM | Socket.io | MySQL | Redis |
+| ---------- | ------ | ------- | --------- | ----- | ----- |
+### Other
+| Git | Docker | DigitalOcean | Cloudflare | Figma | Trello |
+| --- | ------ | ------------ | ---------- | ----- | ------ |
 
-### `npm run build`
+## Database Design
+Made with `MySQL` + `Redis`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img width="800" src="https://github.com/alasgarlikamal/the-mind/assets/98516464/b6940826-554c-45ba-a89d-a9ed0f5cf9b8">
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Screenshots
+<p align="center">
+<img width="400" height="225" alt="Home page" src="https://github.com/alasgarlikamal/the-mind/assets/98516464/1c3f4118-2f4e-490d-b1f2-c9e4ac372189"> &nbsp;&nbsp;&nbsp; 
+<img width="400" height="225" alt="Login/Register page" src="https://github.com/alasgarlikamal/the-mind/assets/98516464/3758b847-fede-4116-a0f1-8b840b133984">
+</p>
+<p align="center">
+<img width="400" height="225"alt="Lobby page" src="https://github.com/alasgarlikamal/the-mind/assets/98516464/53ebf5c4-45a5-432e-a3ec-10a46f6c8691"> &nbsp;&nbsp;&nbsp;
+<img width="400" height="225" alt="Gameplay page" src="https://github.com/alasgarlikamal/the-mind/assets/98516464/d3c3a556-64e6-4418-a20e-35f419955e35">
+</p>
+<p align="center">
+<img width="400" height="225" alt="Profile" src="https://github.com/alasgarlikamal/the-mind/assets/98516464/b75423fe-3127-44c3-b769-208d93c196d7"> &nbsp;&nbsp;&nbsp;
+<img width="400" height="225" alt="Settings" src="https://github.com/alasgarlikamal/the-mind/assets/98516464/6cba974c-2685-4187-802a-1a3fae0a1136">
+</p>
